@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.tictactoe.ui.board.BoardViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".ui.board.BoardFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/score_board"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32.dp"
+                android:text="@{'('+String.valueOf(viewModel.uiState.player1.sign)+')'+' '+String.valueOf(viewModel.uiState.player1.wins)+' '+':'+' '+String.valueOf(viewModel.uiState.player2.wins)+' '+'('+String.valueOf(viewModel.uiState.player2.sign)+')'}"
+                android:textColor="@color/secondary"
+                android:textSize="44.sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/current_player_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32.dp"
+                android:text="@string/current_player_label"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:textSize="18.sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/score_board" />
+
+            <TextView
+                android:id="@+id/current_player_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(viewModel.uiState.actualPlayer)}"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:textSize="24.sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/current_player_title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/board_recycleview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32.dp"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/current_player_value" />
+
+            <Button
+                android:id="@+id/button_restart"
+                android:layout_width="150.dp"
+                android:layout_height="40.dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/primary"
+                android:text="@string/restart_button_label"
+                android:layout_marginBottom="8.dp"
+                android:textColor="@color/onPrimary"
+                app:layout_constraintBottom_toTopOf="@id/button_dashboard"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+            <Button
+                android:id="@+id/button_dashboard"
+                android:layout_width="150.dp"
+                android:layout_height="40.dp"
+                android:layout_marginBottom="8.dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/secondary"
+                android:text="@string/dashboard_button_label"
+                android:textColor="@color/onSecondary"
+                app:layout_constraintBottom_toTopOf="@id/button_about"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <Button
+                android:id="@+id/button_about"
+                android:layout_width="150.dp"
+                android:layout_height="40.dp"
+                android:layout_marginBottom="32.dp"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/secondary"
+                android:text="@string/about_button_label"
+                android:textColor="@color/onSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">TicTacToe</string>
+
+    <!-- Universal -->
+    <string name="back_button_label">Back</string>
+
+    <!-- Board screen -->
+    <string name="restart_button_label">Restart</string>
+    <string name="dashboard_button_label">Dashboard</string>
+    <string name="about_button_label">About</string>
+    <string name="current_player_label">Current player</string>
+    <string name="field_button_description">Field button</string>
+    <string name="player_won_message">Player %s won</string>
+
+    <!-- About screen -->
+    <string name="version_number_label">Version number: %s</string>
+    <string name="author_developer">Developed by BestDev</string>
+</resources>

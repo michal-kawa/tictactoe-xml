@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/boardFragment">
+
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.example.tictactoe.ui.board.BoardFragment"
+        android:label="Board"
+        tools:layout="@layout/fragment_board">
+        <action
+            android:id="@+id/action_boardFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            />
+        <action
+            android:id="@+id/action_boardFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.tictactoe.ui.dashboard.DashboardFragment"
+        android:label="Board"
+        tools:layout="@layout/fragment_board">
+        <action
+            android:id="@+id/action_dashboardFragment_to_boardFragment"
+            app:destination="@id/boardFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.tictactoe.ui.about.AboutFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_aboutFragment_to_boardFragment"
+            app:destination="@id/boardFragment"
+            />
+    </fragment>
+</navigation>
